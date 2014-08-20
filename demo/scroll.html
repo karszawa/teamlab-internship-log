@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll</title>
+	<style "text/css">
+		.content {
+    	height: 100000px;
+		}
+		.scrollValue {
+			right: 20px;
+    	position: fixed; // スクロールしても位置が固定
+		}
+		#item {
+			top: 50%;
+			left: 90%;
+			height: 100px;
+			width: 100px;
+			background: #000;
+			position: fixed;
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+
+
+<p class="scrollValue">scrollValue=<span id="scrollValue">0</span></p>
+<div id="item"></div>
+
+
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $(window).scroll(function() {
+    var value = $(this).scrollTop();
+
+    // スクロール量を表示
+    $('#scrollValue').text(value);
+
+    // 箱の色を変える
+    var red = Math.floor((value * 0.05) % 255);
+    var green = Math.floor((value * 0.01) % 255);
+    var blue = Math.floor((value * 0.02) % 255);
+    var rgb = "rgb(" + red + "," + green + "," + blue + ")";
+    $('#item').css("background", rgb);
+
+    // 箱を動かす
+    var x = 50 + 40 * Math.cos(value / 1000);
+    var y = 50 + 40 * Math.sin(value / 1000);
+    $('#item').css("left", x + "%");
+    $('#item').css("top", y + "%");
+  });
+});
+</script>
+</body>
+</html>

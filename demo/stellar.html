@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>simple</title>
+	<style type="text/css">
+		#stellar1 {
+	    background: url('background.jpg');
+	    width: 100%;
+	    height: 720px;
+
+	    background-size: cover;
+	    background-attachment: fixed;
+	  }
+
+		#stellar2 {
+	    background: url('background.jpg');
+	    width: 100%;
+	    height: 720px;
+
+	    background-size: cover;
+	    background-attachment: fixed;
+	  }
+
+		.margin {
+    	height: 256px;
+		}
+	</style>
+</head>
+<body>
+	<div class="margin"></div>
+	<div id="stellar1"><img src="foreground.png"></div>
+	<div id="stellar2"><img src="foreground.png"></div>
+  <div class="margin"></div>
+</body>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $(window).scroll(function() {
+    var value = $(this).scrollTop();
+
+    $('#stellar1').css("background-position-y", value * 0.1 + "px")
+	});
+});
+</script>
+</html>
+

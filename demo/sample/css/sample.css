@@ -1,0 +1,41 @@
+@charset "UTF-8";
+#transition {
+  /* 初めの状態 */
+  display: inline-block;
+  color: white;
+  width: 100px;
+  background: blue;
+  /* アニメーションの方法 */
+  transition-property: background, width;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  transition-delay: 0.5s;
+  /* 終わりの状態（マウスオーバした時） */ }
+  #transition:hover {
+    width: 200px;
+    background: red; }
+
+#animation {
+  display: inline-block;
+  color: white;
+  width: 100px;
+  background: blue; }
+  #animation:hover {
+    width: 200px;
+    background: red;
+    /* アニメーションの方法 */
+    /* animation: アニメーション名 アニメーション時間 速度の変化方法 開始するまでの時間 繰り返し回数 繰り返し方法; */
+    /* animationは終わりの状態の中に書く */
+    /* -webkit-とブラウザを指定しないと正しく動かなかった。 */
+    -webkit-animation: btn 2s ease-out 0s 1 normal; }
+
+/* 変化する部分のパラメタ */
+@-webkit-keyframes btn {
+  0% {
+    background: blue;
+    width: 100px; }
+  100% {
+    background: red;
+    width: 200px; } }
+
+/*# sourceMappingURL=sample.css.map */
