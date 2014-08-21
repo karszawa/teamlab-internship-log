@@ -46,7 +46,8 @@ Rubyはオブジェクト指向の思想が一貫していて美しいので好�
 
 ## 一言コメント
 
-インターン中の日記つけてます → `https://github.com/siquare/teamlab_intern_log`
+インターン中の日記つけてます → https://github.com/siquare/teamlab_intern_log
+
 （ちゃんとプロジェクト名などは隠しています！）
 
 
