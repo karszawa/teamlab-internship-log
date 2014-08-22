@@ -36,7 +36,7 @@ Rubyはオブジェクト指向の思想が一貫していて美しいので好�
 
 ## メンターの名前
 
-久松さんと守本さんです。
+[hisasann](https://github.com/hisasann/)と[moriiimo](https://github.com/moriiimo)さんです。
 
 
 ## インターン中やってみたいこと
@@ -47,8 +47,6 @@ Rubyはオブジェクト指向の思想が一貫していて美しいので好�
 ## 一言コメント
 
 インターン中の日記つけてます → https://github.com/siquare/teamlab_intern_log
-
-（ちゃんとプロジェクト名などは隠しています！）
 
 
 ## Links
