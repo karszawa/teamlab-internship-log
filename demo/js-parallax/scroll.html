@@ -5,19 +5,19 @@
 	<title>scroll</title>
 	<style "text/css">
 		.content {
-    	height: 100000px;
+    	   height: 100000px;
 		}
 		.scrollValue {
-			right: 20px;
-    	position: fixed; // スクロールしても位置が固定
+		  right: 20px;
+    	   position: fixed; // スクロールしても位置が固定
 		}
 		#item {
-			top: 50%;
-			left: 90%;
-			height: 100px;
-			width: 100px;
-			background: #000;
-			position: fixed;
+		  top: 50%;
+		  left: 90%;
+		  height: 100px;
+	      width: 100px;
+		  background: #000;
+		  position: fixed;
 		}
 	</style>
 </head>
@@ -26,13 +26,16 @@
 
 
 <p class="scrollValue">scrollValue=<span id="scrollValue">0</span></p>
+
 <div id="item"></div>
 
 
 </div>
+
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
 $(function() {
+
   $(window).scroll(function() {
     var value = $(this).scrollTop();
 
@@ -51,6 +54,14 @@ $(function() {
     var y = 50 + 40 * Math.sin(value / 1000);
     $('#item').css("left", x + "%");
     $('#item').css("top", y + "%");
+
+    // 箱を変形する
+    var w = 60 + 40 * Math.cos(value / 1000);
+    var h = 60 + 40 * Math.sin(value / 1000);
+    $('#item').css("width", w + "px");
+    $('#item').css("height", h + "px");
+    $('#item').css("left", "-=" + w / 2 + "px");
+    $('#item').css("top", "-=" + h / 2 + "px");
   });
 });
 </script>
