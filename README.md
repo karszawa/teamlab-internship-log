@@ -51,4 +51,5 @@ Rubyはオブジェクト指向の思想が一貫していて美しいので好�
 
 ## Links
 
-- [@siquare](https://twitter.com/siquare)
+- [Twitter](https://twitter.com/siquare)
+- [Facebook](https://www.facebook.com/Cubic6)
