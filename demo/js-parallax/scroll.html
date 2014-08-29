@@ -11,7 +11,7 @@
 		  right: 20px;
     	   position: fixed; // スクロールしても位置が固定
 		}
-		#item {
+		#item1, #item2, #item3, #item4, #item5, #item6 {
 		  top: 50%;
 		  left: 90%;
 		  height: 100px;
@@ -27,7 +27,12 @@
 
 <p class="scrollValue">scrollValue=<span id="scrollValue">0</span></p>
 
-<div id="item"></div>
+<div id="item1"></div>
+<div id="item2"></div>
+<div id="item3"></div>
+<div id="item4"></div>
+<div id="item5"></div>
+<div id="item6"></div>
 
 
 </div>
@@ -37,6 +42,15 @@
 $(function() {
 
   $(window).scroll(function() {
+    scrl('#item1', 0);
+    scrl('#item2', 1);
+    scrl('#item3', 2);
+    scrl('#item4', 3);
+    scrl('#item5', 4);
+    scrl('#item6', 5);
+  });
+
+  function scrl(id, arg) {
     var value = $(this).scrollTop();
 
     // スクロール量を表示
@@ -47,22 +61,22 @@ $(function() {
     var green = Math.floor((value * 0.01) % 255);
     var blue = Math.floor((value * 0.02) % 255);
     var rgb = "rgb(" + red + "," + green + "," + blue + ")";
-    $('#item').css("background", rgb);
+    $(id).css("background", rgb);
 
     // 箱を動かす
-    var x = 50 + 40 * Math.cos(value / 1000);
-    var y = 50 + 40 * Math.sin(value / 1000);
-    $('#item').css("left", x + "%");
-    $('#item').css("top", y + "%");
+    var x = 50 + 40 * Math.cos(value / 1000 + arg);
+    var y = 50 + 40 * Math.sin(value / 1000 + arg);
+    $(id).css("left", x + "%");
+    $(id).css("top", y + "%");
 
     // 箱を変形する
-    var w = 60 + 40 * Math.cos(value / 1000);
-    var h = 60 + 40 * Math.sin(value / 1000);
-    $('#item').css("width", w + "px");
-    $('#item').css("height", h + "px");
-    $('#item').css("left", "-=" + w / 2 + "px");
-    $('#item').css("top", "-=" + h / 2 + "px");
-  });
+    var w = 60 + 40 * Math.cos(value / 1000 + arg);
+    var h = 60 + 40 * Math.sin(value / 1000 + arg);
+    $(id).css("width", w + "px");
+    $(id).css("height", h + "px");
+    $(id).css("left", "-=" + w / 2 + "px");
+    $(id).css("top", "-=" + h / 2 + "px");
+  }
 });
 </script>
 </body>
