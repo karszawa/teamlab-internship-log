@@ -33,12 +33,13 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
 $(function() {
-    for(var i = 0; i < 6; i++) {
+		var ITEMS = 20;
+    for(var i = 0; i < ITEMS; i++) {
         $('#content').append($("<div>").attr("id", "item" + i).addClass("item"));
     }
 
   $(window).scroll(function() {
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < ITEMS; i++) {
         scrl($("#item" + i), i);
     };
   });
